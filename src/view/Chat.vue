@@ -1,5 +1,4 @@
 <script>
-import { socket } from "@/socket";
 import { mapActions } from "vuex";
 
 export default {

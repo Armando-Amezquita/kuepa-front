@@ -27,3 +27,4 @@ npm install
 Para ejecutar el proyecto, utiliza el siguiente comando:
 - npm run serve
 El proyecto se ejecutará en  http://localhost:5173/
+
