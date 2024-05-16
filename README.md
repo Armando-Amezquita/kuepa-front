@@ -20,9 +20,11 @@ npm install
 ## Tecnologías utilizadas
 - Vue.js
 - Vuex (para el manejo de estado)
+- Vite
 - Socket.IO (para la comunicación en tiempo real)
 
 ## Ejecución
 Para ejecutar el proyecto, utiliza el siguiente comando:
 - npm run serve
-El proyecto se ejecutará en http://localhost:3000.
+El proyecto se ejecutará en  http://localhost:5173/
+
