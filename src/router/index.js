@@ -13,14 +13,23 @@ const router = createRouter({
             path: '/dashboard', 
             name: 'dashboard',
             component: () => import('../view/Dashboard.vue'),
-            children: [
-                {
-                    path: ':id', component: import('../components/Card.vue')
-                }
-            ]
+            meta: { requiresAuth: true }
         },
        
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        const token = localStorage.getItem('auth');
+        if (!token) {
+            next({ name: 'login' });
+        } else {
+            next();
+        }
+    } else {
+        next(); 
+    }
+});
 
 export default router;

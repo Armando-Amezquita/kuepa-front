@@ -1,4 +1,4 @@
-import { login } from "@/api/user"
+import { login, signup } from "@/api/user"
 
 export const user = {
     namespaced: true,
@@ -21,6 +21,9 @@ export const user = {
             const response = await login(user, password);
             commit('setUserDb', response)
             return response;
+        },
+        sign: async({ commit }, payload) => {
+            await signup(payload);
         },
     },
 }

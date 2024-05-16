@@ -22,22 +22,22 @@
             },
 
             async loginUser(){
+                if(!this.user || !this.password){
+                    return; 
+                }
                 const userLogin = {
                     user: this.user,
                     password: this.password
                 }
-                const user = await this.loginDb(userLogin);
-                if(!user.status){
-                    return alert(user.message)
-                }
-                localStorage.setItem("user", JSON.stringify(user.response));
+
+                await this.loginDb(userLogin);
                 return this.navigateRedirect()
             },
         },
 
         mounted(){
-            const user = localStorage.getItem("user");
-            if(user){
+            const token = localStorage.getItem("auth");
+            if(token){
                 this.$router.push('/dashboard');
             }
         },
@@ -87,7 +87,7 @@
         width: 100%;
         height: 100vh;
         padding: 1rem;
-        background-color: #32173A;
+        background-color: $bgColor2;
         
         &__container{
             position: relative;
@@ -98,13 +98,7 @@
             max-width: 40rem;
             border-radius: 1rem;
             padding: 1.5rem;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.36);
-        }
-        
-        &__header{
-            // position: absolute;
-            // left: 1rem;
-            // margin-bottom: 1rem;
+            box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.5);;
         }
         
         &__form{
@@ -142,7 +136,8 @@
                 border-radius: 0.6rem;
                 border: 1px solid $darkGray;
                 outline: none;
-                background-color: $white;
+                color: $white;
+                background-color: transparent;
             }
             &-btnLogin{
                 margin-top: 2rem;

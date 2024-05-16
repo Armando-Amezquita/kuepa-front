@@ -37,8 +37,8 @@
             &-register{
                 width: 11rem;
                 font-size: 1.4rem;
-                background-color: $white;
                 color: $bgColor;
+                background-color: transparent;
                 border: none;
                 border: 1px solid $bgColor;
             }
