@@ -20,6 +20,7 @@ npm install
 ## Tecnologías utilizadas
 - Vue.js
 - Vuex (para el manejo de estado)
+- Vite
 - Socket.IO (para la comunicación en tiempo real)
 
 ## Ejecución
