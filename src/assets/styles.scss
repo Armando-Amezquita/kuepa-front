@@ -1,4 +1,4 @@
-$bgColor: #248AFF;
+$bgColor: #73E8E7;
 $darkGray: #4A4844;
 $lowGray: #E5E5E5;
 $darkBlue: hsl(228, 34%, 14%);
@@ -30,4 +30,10 @@ li{
 
 a{
   text-decoration: none;
+}
+
+.display_Flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
